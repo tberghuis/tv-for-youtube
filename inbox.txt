@@ -1,0 +1,33 @@
+
+chrome://inspect/#devices
+
+kiwi user-agent hello world
+
+manifest.json
+
+record a video, scrcpy
+
+submit extension to chrome web store
+show how to load extension from chrome web store and github
+
+mention you can load other extensions such as ublock origin
+
+video title, cast yt from phone to tablet, (tablet as a chromecast)
+description
+benefits
+  block ads
+  browse comments on phone whilst watching fullscreen tablet
+
+dual monitor tablet
+copy code from github example
+
+
+do i event need content script, onBeforeSendHeaders in background.js
+
+get fullscreen working.... do it tomorrow... use a dialog from content?
+dialog vanilla js...
+
+
+install ublock origin kiwi
+
+kiwi youtube.com/tv homescreen shortcut

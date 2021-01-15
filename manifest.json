@@ -1,0 +1,24 @@
+{
+  "name": "TV for Youtube",
+  "description": "TV for Youtube",
+  "version": "0.0.1",
+  "manifest_version": 2,
+
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "https://www.youtube.com/tv"
+  ],
+
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": ["https://www.youtube.com/tv"],
+      "run_at": "document_start"
+    }
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  }
+}
