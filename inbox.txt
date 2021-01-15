@@ -31,3 +31,5 @@ dialog vanilla js...
 install ublock origin kiwi
 
 kiwi youtube.com/tv homescreen shortcut
+
+https://github.com/tberghuis/fullscreen-youtube-tv
