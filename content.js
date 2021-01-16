@@ -41,5 +41,6 @@ function closeModal() {
 function fullscreenYesHandler() {
   console.log("yes handler");
   closeModal();
-  document.documentElement.requestFullscreen();
+  // document.documentElement.requestFullscreen();
+  document.body.webkitRequestFullscreen();
 }
