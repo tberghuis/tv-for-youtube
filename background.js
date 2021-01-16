@@ -1,7 +1,7 @@
-const USER_AGENT_OVERRIDE = 'Mozilla/5.0 (SMART-TV; Linux; Tizen 4.0.0.2) AppleWebkit/605.1.15 (KHTML, like Gecko) SamsungBrowser/9.2 TV Safari/605.1.15';
+const USER_AGENT_OVERRIDE =
+  "Mozilla/5.0 (SMART-TV; Linux; Tizen 4.0.0.2) AppleWebkit/605.1.15 (KHTML, like Gecko) SamsungBrowser/9.2 TV Safari/605.1.15";
 
-
-console.log('hello background.js');
+console.log("hello background.js");
 init();
 
 ////////// functions

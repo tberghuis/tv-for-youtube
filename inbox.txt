@@ -1,10 +1,6 @@
 
 chrome://inspect/#devices
 
-kiwi user-agent hello world
-
-manifest.json
-
 record a video, scrcpy
 
 submit extension to chrome web store
@@ -18,28 +14,12 @@ benefits
   block ads
   browse comments on phone whilst watching fullscreen tablet
 
-dual monitor tablet
-copy code from github example
-
-
-do i event need content script, onBeforeSendHeaders in background.js
-
-get fullscreen working.... do it tomorrow... use a dialog from content?
-dialog vanilla js...
 
 
 install ublock origin kiwi
 
 kiwi youtube.com/tv homescreen shortcut
 
-https://github.com/tberghuis/fullscreen-youtube-tv
+cull https://github.com/tberghuis/fullscreen-youtube-tv
 
-test on desktop
-
-css modal...
-framework or just copy a simple codepen
-
-best way oncontentloaded no because i am creating DOM in js
-
-
-get it working end to end, then fill in the details
+create github repo
