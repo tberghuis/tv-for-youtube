@@ -33,3 +33,13 @@ install ublock origin kiwi
 kiwi youtube.com/tv homescreen shortcut
 
 https://github.com/tberghuis/fullscreen-youtube-tv
+
+test on desktop
+
+css modal...
+framework or just copy a simple codepen
+
+best way oncontentloaded no because i am creating DOM in js
+
+
+get it working end to end, then fill in the details
