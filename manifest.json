@@ -13,8 +13,9 @@
   "content_scripts": [
     {
       "js": ["content.js"],
+      "css":        ["content.css"],
       "matches": ["https://www.youtube.com/tv"],
-      "run_at": "document_start"
+      "run_at": "document_end"
     }
   ],
 

@@ -1,24 +1,45 @@
 console.log("hello content.js");
+let modal;
+let fullscreenYesBtn;
+let fullscreenNoBtn;
 
-init();
+createModal();
+addListeners();
 
 ///////// functions
 
-// i dont think this is needed for some reason
+function createModal() {
+  fullscreenYesBtn = document.createElement("button");
+  fullscreenNoBtn = document.createElement("button");
+  fullscreenYesBtn.innerText = "Yes";
+  fullscreenNoBtn.innerText = "No";
 
-function init() {
-  var userAgent = "hello agent";
-  var code =
-    "if(navigator.__defineGetter__){navigator.__defineGetter__('userAgent',function(){return " +
-    userAgent +
-    ";});}";
-  var textNode = document.createTextNode(code);
+  modal = document.createElement("div");
+  modal.setAttribute("id", "ask-fullscreen-modal");
 
-  var script = document.createElement("script");
-  //eval(code);
-  script.appendChild(textNode);
-  script.remove();
-  var parentNode = document.head || document.documentElement;
-  parentNode.appendChild(script);
-  parentNode.removeChild(script);
+  modal.innerHTML = `
+    <h2>Do you want fullscreen?</h2>
+  `;
+  const d1 = document.createElement("div");
+  d1.appendChild(fullscreenYesBtn);
+  d1.appendChild(fullscreenNoBtn);
+
+  modal.appendChild(d1);
+
+  document.body.appendChild(modal);
+}
+
+function addListeners() {
+  fullscreenYesBtn.addEventListener("click", fullscreenYesHandler);
+  fullscreenNoBtn.addEventListener("click", closeModal);
+}
+
+function closeModal() {
+  modal.classList.add("hide");
+}
+
+function fullscreenYesHandler() {
+  console.log("yes handler");
+  closeModal();
+  document.documentElement.requestFullscreen();
 }
