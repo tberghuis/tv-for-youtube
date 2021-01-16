@@ -28,3 +28,7 @@ create github repo
 i might need to inject js fullscreen to page 
 
 what is webkit???
+
+make a fullscreen overlay button when touch screen...
+
+make the Yes button bigger
