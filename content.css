@@ -1,10 +1,11 @@
 #ask-fullscreen-modal {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   position: fixed;
-  height: 50vh;
-  width: 50vw;
+  min-height: 50vh;
+  min-width: 50vw;
 
   left: 50%;
   top: 50%;
@@ -17,8 +18,24 @@
   z-index: 10;
 
   color: black;
+
+  text-align: center;
 }
 
 .hide {
   display: none !important;
+}
+
+#ask-fullscreen-modal button {
+  font-size: 40px;
+  margin: 5px;
+}
+
+#fullscreen-img {
+  position: fixed;
+  height: 40px;
+  width: 40px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

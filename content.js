@@ -2,9 +2,14 @@ console.log("hello content.js");
 let modal;
 let fullscreenYesBtn;
 let fullscreenNoBtn;
+let fullscreenImg;
+
+let fullscreenActive = false;
 
 createModal();
 addListeners();
+
+test();
 
 ///////// functions
 
@@ -27,11 +32,24 @@ function createModal() {
   modal.appendChild(d1);
 
   document.body.appendChild(modal);
+
+  // add fullscreen img
+  fullscreenImg = document.createElement("img");
+  fullscreenImg.src = chrome.runtime.getURL("fullscreen.png");
+  fullscreenImg.setAttribute("id", "fullscreen-img");
+  fullscreenImg.classList.add("hide");
+  document.body.appendChild(fullscreenImg);
 }
 
 function addListeners() {
   fullscreenYesBtn.addEventListener("click", fullscreenYesHandler);
-  fullscreenNoBtn.addEventListener("click", closeModal);
+  fullscreenNoBtn.addEventListener("click", fullscreenNoHandler);
+}
+
+function fullscreenNoHandler(e) {
+  // prevent from showing fullscreen img
+  e.stopPropagation();
+  closeModal();
 }
 
 function closeModal() {
@@ -41,7 +59,26 @@ function closeModal() {
 function fullscreenYesHandler() {
   console.log("yes handler");
   closeModal();
+
+  fullscreenActive = true;
+
   // document.documentElement.requestFullscreen();
   // document.body.webkitRequestFullscreen();
   document.documentElement.webkitRequestFullscreen();
 }
+
+function test() {
+  document.addEventListener(
+    "click",
+    () => {
+      console.log("test");
+    },
+    false
+  );
+}
+
+
+function showFullscreenImg() {
+  fullscreenImg.classList.add("hide");
+}
+

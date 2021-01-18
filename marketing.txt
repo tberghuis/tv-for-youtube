@@ -1,0 +1,16 @@
+
+record a video, scrcpy
+
+show how to load extension from chrome web store and github
+
+mention you can load other extensions such as ublock origin
+
+video title, cast yt from phone to tablet, (tablet as a chromecast)
+description
+benefits
+  block ads
+  browse comments on phone whilst watching fullscreen tablet
+
+install ublock origin kiwi
+
+kiwi youtube.com/tv homescreen shortcut

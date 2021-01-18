@@ -1,34 +1,31 @@
 
 chrome://inspect/#devices
 
-record a video, scrcpy
 
 submit extension to chrome web store
-show how to load extension from chrome web store and github
 
-mention you can load other extensions such as ublock origin
-
-video title, cast yt from phone to tablet, (tablet as a chromecast)
-description
-benefits
-  block ads
-  browse comments on phone whilst watching fullscreen tablet
-
-
-
-install ublock origin kiwi
-
-kiwi youtube.com/tv homescreen shortcut
 
 cull https://github.com/tberghuis/fullscreen-youtube-tv
 
-create github repo
-
-
-i might need to inject js fullscreen to page 
-
-what is webkit???
 
 make a fullscreen overlay button when touch screen...
 
 make the Yes button bigger
+
+center modal content
+
+chrome web store release, update existing rejected
+make icon
+
+marketing
+
+test on tablet
+
+trello tasks cull
+
+README.md
+
+
+so i want an action to undo fullscreen....
+
+this is when vue and hot reload comes in handy
