@@ -29,3 +29,5 @@ README.md
 so i want an action to undo fullscreen....
 
 this is when vue and hot reload comes in handy
+
+cull the modal

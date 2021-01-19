@@ -1,17 +1,17 @@
-console.log("hello content.js");
 let modal;
 let fullscreenYesBtn;
 let fullscreenNoBtn;
-// let fullscreenImg;
 let expandControl;
 let compressControl;
 
 let fullscreenActive = false;
 
 createModal();
+createFullscreenControls();
+
 addListeners();
 
-test();
+// test();
 
 ///////// functions
 
@@ -34,23 +34,44 @@ function createModal() {
   modal.appendChild(d1);
 
   document.body.appendChild(modal);
+}
 
-  // add fullscreen img
-  // fullscreenImg = document.createElement("img");
-  // fullscreenImg.src = chrome.runtime.getURL("fullscreen.png");
-  // fullscreenImg.setAttribute("id", "fullscreen-img");
-  // fullscreenImg.classList.add("hide");
-  // document.body.appendChild(fullscreenImg);
-
+function createFullscreenControls() {
   expandControl = createElementFromHTML(
-    '<i class="fas fa-expand fa-3x"></i>'
+    '<i class="fas fa-expand fa-3x hide"></i>'
   );
-  document.body.appendChild(expandControl);
+  compressControl = createElementFromHTML(
+    '<i class="fas fa-compress fa-3x hide"></i>'
+  );
+  const d1 = createElementFromHTML('<div id="fullscreen-controls"></div>');
+  d1.appendChild(expandControl);
+  d1.appendChild(compressControl);
+
+  document.body.appendChild(d1);
 }
 
 function addListeners() {
   fullscreenYesBtn.addEventListener("click", fullscreenYesHandler);
   fullscreenNoBtn.addEventListener("click", fullscreenNoHandler);
+
+  // show fullscreen control as overlay timeout
+  document.addEventListener("click", showFullscreenControl);
+}
+
+function showFullscreenControl() {
+  // start basic
+  expandControl.classList.remove("hide");
+  setTimeout(hideFullscreenControls, 3000);
+}
+
+function hideFullscreenControls() {
+  if (!expandControl.classList.contains(hide)) {
+    expandControl.classList.add("hide");
+  }
+
+  if (!compressControl.classList.contains(hide)) {
+    compressControl.classList.add("hide");
+  }
 }
 
 function fullscreenNoHandler(e) {
@@ -74,19 +95,15 @@ function fullscreenYesHandler() {
   document.documentElement.webkitRequestFullscreen();
 }
 
-function test() {
-  document.addEventListener(
-    "click",
-    () => {
-      console.log("test");
-    },
-    false
-  );
-}
-
-function showFullscreenImg() {
-  fullscreenImg.classList.add("hide");
-}
+// function test() {
+//   document.addEventListener(
+//     "click",
+//     () => {
+//       console.log("test");
+//     },
+//     false
+//   );
+// }
 
 ////////////////////// utility fns
 // put in separate file????
