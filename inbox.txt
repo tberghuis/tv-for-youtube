@@ -8,13 +8,8 @@ submit extension to chrome web store
 cull https://github.com/tberghuis/fullscreen-youtube-tv
 
 
-make a fullscreen overlay button when touch screen...
-
-make the Yes button bigger
-
-center modal content
-
 chrome web store release, update existing rejected
+
 make icon
 
 marketing
@@ -24,10 +19,3 @@ test on tablet
 trello tasks cull
 
 README.md
-
-
-so i want an action to undo fullscreen....
-
-this is when vue and hot reload comes in handy
-
-cull the modal
