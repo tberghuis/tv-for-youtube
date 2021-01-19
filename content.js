@@ -1,40 +1,12 @@
-let modal;
-let fullscreenYesBtn;
-let fullscreenNoBtn;
 let expandControl;
 let compressControl;
 
 let fullscreenActive = false;
 
-// createModal();
 createFullscreenControls();
-
 addListeners();
 
-// test();
-
 ///////// functions
-
-function createModal() {
-  fullscreenYesBtn = document.createElement("button");
-  fullscreenNoBtn = document.createElement("button");
-  fullscreenYesBtn.innerText = "Yes";
-  fullscreenNoBtn.innerText = "No";
-
-  modal = document.createElement("div");
-  modal.setAttribute("id", "ask-fullscreen-modal");
-
-  modal.innerHTML = `
-    <h2>Do you want fullscreen?</h2>
-  `;
-  const d1 = document.createElement("div");
-  d1.appendChild(fullscreenYesBtn);
-  d1.appendChild(fullscreenNoBtn);
-
-  modal.appendChild(d1);
-
-  document.body.appendChild(modal);
-}
 
 function createFullscreenControls() {
   expandControl = createElementFromHTML(
@@ -51,9 +23,6 @@ function createFullscreenControls() {
 }
 
 function addListeners() {
-  // fullscreenYesBtn.addEventListener("click", fullscreenYesHandler);
-  // fullscreenNoBtn.addEventListener("click", fullscreenNoHandler);
-
   // show fullscreen control as overlay timeout
   document.addEventListener("click", showFullscreenControl);
 
@@ -76,10 +45,6 @@ function compressHandler(e) {
 }
 
 function showFullscreenControl() {
-  // start basic
-  // expandControl.classList.remove("hide");
-  // setTimeout(hideFullscreenControls, 3000);
-
   if (fullscreenActive) {
     compressControl.classList.remove("hide");
   } else {
@@ -99,39 +64,7 @@ function hideFullscreenControls() {
   }
 }
 
-function fullscreenNoHandler(e) {
-  // prevent from showing fullscreen img
-  e.stopPropagation();
-  closeModal();
-}
-
-function closeModal() {
-  modal.classList.add("hide");
-}
-
-function fullscreenYesHandler() {
-  console.log("yes handler");
-  closeModal();
-
-  fullscreenActive = true;
-
-  // document.documentElement.requestFullscreen();
-  // document.body.webkitRequestFullscreen();
-  document.documentElement.webkitRequestFullscreen();
-}
-
-// function test() {
-//   document.addEventListener(
-//     "click",
-//     () => {
-//       console.log("test");
-//     },
-//     false
-//   );
-// }
-
-////////////////////// utility fns
-// put in separate file????
+////////////////////// util functions
 
 function createElementFromHTML(htmlString) {
   var div = document.createElement("div");
