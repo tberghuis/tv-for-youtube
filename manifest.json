@@ -13,7 +13,7 @@
   "content_scripts": [
     {
       "js": ["content.js"],
-      "css":        ["content.css"],
+      "css": ["fontawesome/all.css", "content.css"],
       "matches": ["https://www.youtube.com/tv"],
       "run_at": "document_end"
     }
@@ -22,5 +22,8 @@
   "background": {
     "scripts": ["background.js"]
   },
-  "web_accessible_resources": ["fullscreen.png"]
+  "web_accessible_resources": [
+    "fullscreen.png",
+    "fontawesome/webfonts/fa-solid-900.woff2"
+  ]
 }

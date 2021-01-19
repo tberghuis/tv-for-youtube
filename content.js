@@ -2,7 +2,9 @@ console.log("hello content.js");
 let modal;
 let fullscreenYesBtn;
 let fullscreenNoBtn;
-let fullscreenImg;
+// let fullscreenImg;
+let expandControl;
+let compressControl;
 
 let fullscreenActive = false;
 
@@ -34,11 +36,16 @@ function createModal() {
   document.body.appendChild(modal);
 
   // add fullscreen img
-  fullscreenImg = document.createElement("img");
-  fullscreenImg.src = chrome.runtime.getURL("fullscreen.png");
-  fullscreenImg.setAttribute("id", "fullscreen-img");
-  fullscreenImg.classList.add("hide");
-  document.body.appendChild(fullscreenImg);
+  // fullscreenImg = document.createElement("img");
+  // fullscreenImg.src = chrome.runtime.getURL("fullscreen.png");
+  // fullscreenImg.setAttribute("id", "fullscreen-img");
+  // fullscreenImg.classList.add("hide");
+  // document.body.appendChild(fullscreenImg);
+
+  expandControl = createElementFromHTML(
+    '<i class="fas fa-expand fa-3x"></i>'
+  );
+  document.body.appendChild(expandControl);
 }
 
 function addListeners() {
@@ -77,8 +84,15 @@ function test() {
   );
 }
 
-
 function showFullscreenImg() {
   fullscreenImg.classList.add("hide");
 }
 
+////////////////////// utility fns
+// put in separate file????
+
+function createElementFromHTML(htmlString) {
+  var div = document.createElement("div");
+  div.innerHTML = htmlString.trim();
+  return div.firstChild;
+}
