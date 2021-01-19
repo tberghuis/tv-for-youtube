@@ -10,10 +10,10 @@ addListeners();
 
 function createFullscreenControls() {
   expandControl = createElementFromHTML(
-    '<i class="fas fa-expand fa-5x hide"></i>'
+    '<i class="fas fa-expand fa-10x hide"></i>'
   );
   compressControl = createElementFromHTML(
-    '<i class="fas fa-compress fa-5x hide"></i>'
+    '<i class="fas fa-compress fa-10x hide"></i>'
   );
   const d1 = createElementFromHTML('<div id="fullscreen-controls"></div>');
   d1.appendChild(expandControl);
