@@ -1,7 +1,7 @@
 let expandControl;
 let compressControl;
-
 let fullscreenActive = false;
+let hideFullscreenControlsTimeout = null;
 
 createFullscreenControls();
 addListeners();
@@ -51,10 +51,12 @@ function showFullscreenControl() {
     expandControl.classList.remove("hide");
   }
 
-  setTimeout(hideFullscreenControls, 3000);
+  hideFullscreenControlsTimeout = setTimeout(hideFullscreenControls, 3000);
 }
 
 function hideFullscreenControls() {
+  clearTimeout(hideFullscreenControlsTimeout);
+
   if (!expandControl.classList.contains("hide")) {
     expandControl.classList.add("hide");
   }
