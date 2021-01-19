@@ -18,4 +18,4 @@ test on tablet
 
 trello tasks cull
 
-README.md
+check for alternatives already on web store
