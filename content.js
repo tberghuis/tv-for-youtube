@@ -6,7 +6,7 @@ let compressControl;
 
 let fullscreenActive = false;
 
-createModal();
+// createModal();
 createFullscreenControls();
 
 addListeners();
@@ -38,10 +38,10 @@ function createModal() {
 
 function createFullscreenControls() {
   expandControl = createElementFromHTML(
-    '<i class="fas fa-expand fa-3x hide"></i>'
+    '<i class="fas fa-expand fa-5x hide"></i>'
   );
   compressControl = createElementFromHTML(
-    '<i class="fas fa-compress fa-3x hide"></i>'
+    '<i class="fas fa-compress fa-5x hide"></i>'
   );
   const d1 = createElementFromHTML('<div id="fullscreen-controls"></div>');
   d1.appendChild(expandControl);
@@ -51,25 +51,50 @@ function createFullscreenControls() {
 }
 
 function addListeners() {
-  fullscreenYesBtn.addEventListener("click", fullscreenYesHandler);
-  fullscreenNoBtn.addEventListener("click", fullscreenNoHandler);
+  // fullscreenYesBtn.addEventListener("click", fullscreenYesHandler);
+  // fullscreenNoBtn.addEventListener("click", fullscreenNoHandler);
 
   // show fullscreen control as overlay timeout
   document.addEventListener("click", showFullscreenControl);
+
+  expandControl.addEventListener("click", expandHandler, true);
+  compressControl.addEventListener("click", compressHandler, true);
+}
+
+function expandHandler(e) {
+  fullscreenActive = true;
+  document.documentElement.webkitRequestFullscreen();
+  hideFullscreenControls();
+  e.stopPropagation();
+}
+
+function compressHandler(e) {
+  fullscreenActive = false;
+  document.webkitExitFullscreen();
+  hideFullscreenControls();
+  e.stopPropagation();
 }
 
 function showFullscreenControl() {
   // start basic
-  expandControl.classList.remove("hide");
+  // expandControl.classList.remove("hide");
+  // setTimeout(hideFullscreenControls, 3000);
+
+  if (fullscreenActive) {
+    compressControl.classList.remove("hide");
+  } else {
+    expandControl.classList.remove("hide");
+  }
+
   setTimeout(hideFullscreenControls, 3000);
 }
 
 function hideFullscreenControls() {
-  if (!expandControl.classList.contains(hide)) {
+  if (!expandControl.classList.contains("hide")) {
     expandControl.classList.add("hide");
   }
 
-  if (!compressControl.classList.contains(hide)) {
+  if (!compressControl.classList.contains("hide")) {
     compressControl.classList.add("hide");
   }
 }

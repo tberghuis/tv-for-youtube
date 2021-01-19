@@ -1,4 +1,4 @@
-#ask-fullscreen-modal {
+/* #ask-fullscreen-modal {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,22 +20,23 @@
   color: black;
 
   text-align: center;
-}
+} */
 
 .hide {
   display: none !important;
 }
 
-#ask-fullscreen-modal button {
+/* #ask-fullscreen-modal button {
   font-size: 40px;
   margin: 5px;
-}
+} */
 
-#fullscreen-img {
+#fullscreen-controls {
   position: fixed;
-  height: 40px;
-  width: 40px;
+  /* height: 40px;
+  width: 40px; */
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1000;
 }
