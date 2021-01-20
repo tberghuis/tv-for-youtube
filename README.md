@@ -1,3 +1,5 @@
+https://chrome.google.com/webstore/detail/tv-for-youtube/mbkenkpbobncoehadfogibjlhnaopcpb
+
 Chrome extension that allows the viewing of the TV interface through the browser.
 
 Features a control to allow for fullscreen mode.
