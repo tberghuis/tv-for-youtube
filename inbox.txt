@@ -10,12 +10,8 @@ cull https://github.com/tberghuis/fullscreen-youtube-tv
 
 chrome web store release, update existing rejected
 
-make icon
-
 marketing
 
-test on tablet
-
-trello tasks cull
-
 check for alternatives already on web store
+
+mention open source chrome web store
